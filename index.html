@@ -1,0 +1,1146 @@
+<!Doctype html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="noindex">
+    <title>產品名稱-</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link href="css/onepage-scroll.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/sweet-alert.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/spectrum.css">
+    <link rel="stylesheet" href="css/setting.css" />
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.js"></script>
+    <script src="js/jquery-sakura.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
+    <script src="js/jquery.lazyload.min.js"></script>
+    <!--[if IE 7]><link rel="stylesheet" href="css/font-awesome-ie7.min.css" /><![endif]-->
+
+    <!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+
+        .a42body { overflow: auto; }
+        .a42main { height: 100%; }
+        .a42section { height: 800px }
+        .alert { position: fixed; bottom: 0; width: 100%; background: rgba(255, 255, 255, .5); height: 40px; text-align: center; z-index: 9999; }
+        .proditem .page_container {background-size: auto 100%;background-repeat: no-repeat;}
+
+        @media screen and (orientation: portrait) {
+            .proditem {
+                margin-bottom: 30px
+            }
+            .proditem .page_container {
+                height: 80vh;
+                padding-bottom: 100px;
+                background-size: auto 80%;
+            }
+            /*用 c# 偵測 useragent，把圖片與色碼塞進去*/
+            .prod1 .page_container { background-color: #fff !important; background-image: url(upload/pdimg_01m.jpg) !important; }
+            .prod2 .page_container { background-color: #fff !important; background-image: url(upload/pdimg_02m.jpg) !important; }
+            .prod3 .page_container { background-color: #fff !important; background-image: url(upload/pdimg_03m.jpg) !important; }
+            .prod4 .page_container { background-color: #fff !important; background-image: url(upload/pdimg_04m.jpg) !important; }
+            .prod5 .page_container { background-color: #fff !important; background-image: url(upload/pdimg_05m.jpg) !important; }
+            .footer .page_container { background-image: url(upload/footer_bg_m.jpg) !important }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toolbar">
+      <div class="input-group page_select_wrap">
+        <span class="input-group-addon">選擇要編輯的頁面</span>
+        <select class="form-control page_select">
+          <!-- <optgroup label="訂單" disabled>
+            <option value="">訂單管理</option>
+            <option value="">對帳</option>
+            <option value="">出貨</option>
+            <option value="">退貨</option>
+          </optgroup> -->
+          <!-- <optgroup label="頁面設定"> -->
+            <option value="" selected="">首頁</option>
+            <option value="">客服中心</option>
+            <option value="">新聞管理</option>
+            <option value="">+新增頁面</option>
+          <!-- </optgroup> -->
+          <!-- <optgroup label="商品管理" disabled>
+            <option value="">商品分類</option>
+            <option value="">商品管理</option>
+          </optgroup>
+          <optgroup label="會員功能" disabled>
+            <option value="">會員註冊須知</option>
+            <option value="">會員中心頁面</option>
+            <option value="">會員管理</option>
+          </optgroup>
+          <option value="" disabled>網站基本設定</option>
+          <option value="" disabled>購物車結帳設定</option>
+          <option value="" disabled>通知信設定</option> -->
+        </select>
+      </div>
+        <div class="index">
+          <span class="blocktitle">首頁內容:</span>
+          <a href="" data-toggle="modal" data-target="#sortModal" data-backdrop="static" data-keyboard="false" class="btn btn-primary"><span class="glyphicon glyphicon-indent-left"></span> 設定順序</a>
+          <a href="" data-toggle="modal" data-target="#imgModal" class="btn btn-primary"><span class="glyphicon glyphicon-picture"></span> 設定內容區塊圖片</a>
+          <a href="" data-toggle="modal" data-target="#navModal" class="btn btn-primary"><span class="glyphicon glyphicon-menu-hamburger"></span> 設定主選單</a>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="navModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">設定主選單</h4>
+          </div>
+          <div class="modal-body">
+            <h3 style="margin-top:0">選單項目</h3>
+            <ul class="topmenu_list">
+              <li>
+                <div class="nav_name">
+                  <select class="form-control">
+                    <option>選擇要顯示在主選單的頁面</option>
+                    <optgroup label="一般頁面">
+                      <option value="">品牌故事</option>
+                      <option value="">購物須知</option>
+                      <option value="">客服中心</option>
+                      <option value="">銷售據點</option>
+                    </optgroup>
+                    <optgroup label="系統預設頁面">
+                      <option value="">購物車</option>
+                      <option value="" selected="">訂單查詢</option>
+                      <option value="">登入/註冊</option>
+                      <option value="">新聞列表</option>
+                      <option value="">首頁</option>
+                    </optgroup>
+                  </select>
+                </div>
+                <div class="previewimg_wrap">
+                  <div class="img_preview" style="background-image:url(upload/service_icon.png);"></div>
+                </div>
+                <div class="imgpath_wrap">
+                  <div class="input-group input-group-sm">
+                    <span class="input-group-addon"> 圖示:(建議尺寸77*77):</span>
+                    <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                    <div class="input-group-btn">
+                        <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                        <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="nav_name">
+                  <select class="form-control">
+                    <option>選擇要顯示在主選單的頁面</option>
+                    <optgroup label="一般頁面">
+                      <option value="">品牌故事</option>
+                      <option value="">購物須知</option>
+                      <option value="" selected="">客服中心</option>
+                      <option value="">銷售據點</option>
+                    </optgroup>
+                    <optgroup label="系統預設頁面">
+                      <option value="">購物車</option>
+                      <option value="">訂單查詢</option>
+                      <option value="">登入/註冊</option>
+                      <option value="">新聞列表</option>
+                      <option value="">首頁</option>
+                    </optgroup>
+                  </select>
+                </div>
+                <div class="previewimg_wrap">
+                  <div class="img_preview" style="background-image:url(upload/login_icon.png);"></div>
+                </div>
+                <div class="imgpath_wrap">
+                  <div class="input-group input-group-sm">
+                    <span class="input-group-addon"> 圖示:(建議尺寸77*77):</span>
+                    <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                    <div class="input-group-btn">
+                        <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                        <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="nav_name">
+                  <select class="form-control">
+                    <option>選擇要顯示在主選單的頁面</option>
+                    <optgroup label="一般頁面">
+                      <option value="">品牌故事</option>
+                      <option value="">購物須知</option>
+                      <option value="">客服中心</option>
+                      <option value="">銷售據點</option>
+                    </optgroup>
+                    <optgroup label="系統預設頁面">
+                      <option value="">購物車</option>
+                      <option value="">訂單查詢</option>
+                      <option value="" selected>登入/註冊</option>
+                      <option value="">新聞列表</option>
+                      <option value="">首頁</option>
+                    </optgroup>
+                  </select>
+                </div>
+                <div class="previewimg_wrap">
+                  <div class="img_preview" style="background-image:url(upload/orderlist_icon.png);"></div>
+                </div>
+                <div class="imgpath_wrap">
+                  <div class="input-group input-group-sm">
+                    <span class="input-group-addon"> 圖示:(建議尺寸77*77):</span>
+                    <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                    <div class="input-group-btn">
+                        <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                        <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="nav_name">
+                  <select class="form-control">
+                    <option>選擇要顯示在主選單的頁面</option>
+                    <optgroup label="一般頁面">
+                      <option value="">品牌故事</option>
+                      <option value="">購物須知</option>
+                      <option value="">客服中心</option>
+                      <option value="">銷售據點</option>
+                    </optgroup>
+                    <optgroup label="系統預設頁面">
+                      <option value="" selected>購物車</option>
+                      <option value="">訂單查詢</option>
+                      <option value="">登入/註冊</option>
+                      <option value="">新聞列表</option>
+                      <option value="">首頁</option>
+                    </optgroup>
+                  </select>
+                </div>
+                <div class="previewimg_wrap">
+                  <div class="img_preview" style="background-image:url(upload/cart_icon.png);"></div>
+                </div>
+                <div class="imgpath_wrap">
+                  <div class="input-group input-group-sm">
+                    <span class="input-group-addon"> 圖示:(建議尺寸77*77):</span>
+                    <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                    <div class="input-group-btn">
+                        <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                        <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <h3>跑馬燈文字顏色</h3>   <input type="text" class="form-control marqueecolor">    <br>
+
+          <br>
+          <h3>選單背景</h3>
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="active"><a href="#tab_nav_desktop" data-toggle="tab"><i class="fa fa-desktop" aria-hidden="true"></i> 電腦版</a></li>
+              <li><a href="#tab_nav_mobile" data-toggle="tab"><span class="glyphicon glyphicon-phone"></span> 手機版</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="tab_nav_desktop">
+                <ul class="nav_upload_list">
+                  <li>
+                    <div class="nav_name"><span>上方選單橫幅</span><br></div>
+                    <div class="previewimg_wrap">
+                      <div class="pcfp_preview img_preview" style="background-image:url(upload/topmenu.jpg);"></div>
+                    </div>
+                    <div class="imgpath_wrap">
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon"> 背景圖片:(建議尺寸1234*1234):</span>
+                        <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                        <div class="input-group-btn">
+                            <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                            <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div><!--tab1 end -->
+              <div class="tab-pane" id="tab_nav_mobile">
+                <ul class="upload_list">
+                  <li>
+                    <div class="pull-left" style="padding:5px">上方選單背景色</div>
+
+                    <input type="text" class="form-control bgcolor">
+                  </li>
+                </ul>
+              </div><!--tab1 end -->
+            </div><!--tab content end -->
+
+            </div><!--modal-body end -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default pull-right" data-dismiss="modal">關閉</button>
+              <button type="button" class="btn btn-success pull-left">儲存變更</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="sortModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">滑鼠拖曳設定顯示順序
+              <a href="#" class="btn btn-primary btn-sm btn_addpd"><span class="glyphicon glyphicon-plus"></span> 插入商品</a>
+              <a href="#" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-ok"></span> 儲存</a>
+            </h4>
+          </div>
+          <div class="modal-body">
+            <ul class="sort">
+              <li>
+                <div class="pcbg_preview">
+                  <img src="upload/main1.jpg" class="img_preview">
+                </div>
+                <span class="screen_name">頁面1</span>
+                <div class="switch_wrap">
+            			<input type="checkbox" checked>
+            			<div class="Switch">
+            				<div class="Toggle"></div>
+            				<span class="On">已啟用</span> <span class="Off">已停用</span>
+            			</div>
+            		</div>
+              </li>
+              <li>
+                <div class="pcbg_preview">
+                  <img src="upload/main2.jpg" class="img_preview">
+                </div>
+                <span class="screen_name">頁面2</span>
+                <div class="switch_wrap">
+            			<input type="checkbox" checked>
+            			<div class="Switch">
+            				<div class="Toggle"></div>
+            				<span class="On">已啟用</span> <span class="Off">已停用</span>
+            			</div>
+            		</div>
+              </li>
+              <li>
+                <div class="pcbg_preview">
+                  <img src="upload/prod1.png" class="img_preview">
+                </div>
+                <span class="screen_name">產品1</span>
+                <div class="switch_wrap">
+            			<input type="checkbox" checked>
+            			<div class="Switch">
+            				<div class="Toggle"></div>
+            				<span class="On">已啟用</span> <span class="Off">已停用</span>
+            			</div>
+            		</div>
+              </li>
+              <li>
+                <div class="pcbg_preview">
+                  <img src="upload/prod2.png" class="img_preview">
+                </div>
+                <span class="screen_name">產品2</span>
+                <div class="switch_wrap">
+            			<input type="checkbox" checked>
+            			<div class="Switch">
+            				<div class="Toggle"></div>
+            				<span class="On">已啟用</span> <span class="Off">已停用</span>
+            			</div>
+            		</div>
+              </li>
+              <li>
+                <div class="pcbg_preview">
+                  <img src="upload/pdimg_box.jpg" class="img_preview">
+                </div>
+                <span class="screen_name">活動商品</span>
+                <div class="switch_wrap">
+                  <input type="checkbox" checked>
+                  <div class="Switch">
+                    <div class="Toggle"></div>
+                    <span class="On">已啟用</span> <span class="Off">已停用</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="pcbg_preview">
+                  <img src="upload/prod3.png" class="img_preview">
+                </div>
+                <span class="screen_name">產品3</span>
+                <div class="switch_wrap">
+                  <input type="checkbox" checked>
+                  <div class="Switch">
+                    <div class="Toggle"></div>
+                    <span class="On">已啟用</span> <span class="Off">已停用</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="pcbg_preview">
+                  <img src="upload/prod4.png" class="img_preview">
+                </div>
+                <span class="screen_name">產品4</span>
+                <div class="switch_wrap">
+                  <input type="checkbox" checked>
+                  <div class="Switch">
+                    <div class="Toggle"></div>
+                    <span class="On">已啟用</span> <span class="Off">已停用</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="pcbg_preview">
+                  <img src="upload/prod5.png" class="img_preview">
+                </div>
+                <span class="screen_name">產品5</span>
+                <div class="switch_wrap">
+                  <input type="checkbox" checked>
+                  <div class="Switch">
+                    <div class="Toggle"></div>
+                    <span class="On">已啟用</span> <span class="Off">已停用</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="pcbg_preview">
+                  <img src="upload/main3.jpg" class="img_preview">
+                </div>
+                <span class="screen_name">頁面3</span>
+                <div class="switch_wrap">
+                  <input type="checkbox" checked>
+                  <div class="Switch">
+                    <div class="Toggle"></div>
+                    <span class="On">已啟用</span> <span class="Off">已停用</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="imgModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">設定各區塊圖片</h4>
+          </div>
+          <div class="modal-body">
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="active"><a href="#tab_desktop" data-toggle="tab"><i class="fa fa-desktop" aria-hidden="true"></i> 電腦版</a></li>
+              <li><a href="#tab_mobile" data-toggle="tab"><span class="glyphicon glyphicon-phone"></span> 手機版</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="tab_desktop">
+                <ul class="upload_list">
+                  <li>
+                    <div class="screen_name"><span>頁面1</span><br></div>
+                    <div class="previewimg_wrap">
+                      <div class="pcbg_preview img_preview" style="background-image:url(upload/main1bg.jpg);"></div>
+                      <div class="pcfp_preview img_preview" style="background-image:url(upload/main1.jpg);"></div>
+                    </div>
+                    <div class="imgpath_wrap">
+                      <div class="input-group input-group-sm">
+                  			<span class="input-group-addon"> 背景圖片:(建議尺寸1234*1234):</span>
+                  			<input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                  			<div class="input-group-btn">
+                  					<a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                  					<a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                  			</div>
+                  		</div>
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon">前景圖片:(建議尺寸1234*1234):</span>
+                        <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                        <div class="input-group-btn">
+                            <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                            <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="screen_name"><span>頁面2</span><br></div>
+                    <div class="previewimg_wrap">
+                      <div class="pcbg_preview img_preview" style="background-image:url(upload/main2bg.jpg);"></div>
+                      <div class="pcfp_preview img_preview" style="background-image:url(upload/main2.jpg);"></div>
+                    </div>
+                    <div class="imgpath_wrap">
+                      <div class="input-group input-group-sm">
+                  			<span class="input-group-addon"> 背景圖片:(建議尺寸1234*1234):</span>
+                  			<input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                  			<div class="input-group-btn">
+                  					<a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                  					<a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                  			</div>
+                  		</div>
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon">前景圖片:(建議尺寸1234*1234):</span>
+                        <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                        <div class="input-group-btn">
+                            <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                            <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="screen_name"><span>產品1</span><br></div>
+                    <div class="previewimg_wrap">
+                      <div class="pcbg_preview img_preview" style="background-image:url(upload/pdbg_01.jpg);"></div>
+                      <div class="pcfp_preview img_preview" style="background-image:url(upload/prod1.png);"></div>
+                    </div>
+                    <div class="imgpath_wrap">
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon"> 背景圖片:(建議尺寸1234*1234):</span>
+                        <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                        <div class="input-group-btn">
+                            <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                            <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                        </div>
+                      </div>
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon">前景圖片:(建議尺寸1234*1234):</span>
+                        <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                        <div class="input-group-btn">
+                            <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                            <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="screen_name"><span>產品2</span><br></div>
+                    <div class="previewimg_wrap">
+                      <div class="pcbg_preview img_preview" style="background-image:url(upload/pdbg_02.jpg);"></div>
+                      <div class="pcfp_preview img_preview" style="background-image:url(upload/prod2.png);"></div>
+                    </div>
+                    <div class="imgpath_wrap">
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon"> 背景圖片:(建議尺寸1234*1234):</span>
+                        <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                        <div class="input-group-btn">
+                            <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                            <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                        </div>
+                      </div>
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon">前景圖片:(建議尺寸1234*1234):</span>
+                        <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                        <div class="input-group-btn">
+                            <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                            <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="screen_name"><span>產品3</span><br></div>
+                    <div class="previewimg_wrap">
+                      <div class="pcbg_preview img_preview" style="background-image:url();"></div>
+                      <div class="pcfp_preview img_preview" style="background-image:url(upload/pdimg_box.jpg);"></div>
+                    </div>
+                    <div class="imgpath_wrap">
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon"> 背景圖片:(建議尺寸1234*1234):</span>
+                        <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                        <div class="input-group-btn">
+                            <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                            <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                        </div>
+                      </div>
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon">前景圖片:(建議尺寸1234*1234):</span>
+                        <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                        <div class="input-group-btn">
+                            <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                            <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="screen_name"><span>產品4</span><br></div>
+                    <div class="previewimg_wrap">
+                      <div class="pcbg_preview img_preview" style="background-image:url(upload/pdbg_01.jpg);"></div>
+                      <div class="pcfp_preview img_preview" style="background-image:url(upload/prod3.png);"></div>
+                    </div>
+                    <div class="imgpath_wrap">
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon"> 背景圖片:(建議尺寸1234*1234):</span>
+                        <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                        <div class="input-group-btn">
+                            <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                            <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                        </div>
+                      </div>
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon">前景圖片:(建議尺寸1234*1234):</span>
+                        <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                        <div class="input-group-btn">
+                            <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                            <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="screen_name"><span>產品5</span><br></div>
+                    <div class="previewimg_wrap">
+                      <div class="pcbg_preview img_preview" style="background-image:url(upload/pdbg_02.jpg);"></div>
+                      <div class="pcfp_preview img_preview" style="background-image:url(upload/prod4.png);"></div>
+                    </div>
+                    <div class="imgpath_wrap">
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon"> 背景圖片:(建議尺寸1234*1234):</span>
+                        <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                        <div class="input-group-btn">
+                            <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                            <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                        </div>
+                      </div>
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon">前景圖片:(建議尺寸1234*1234):</span>
+                        <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                        <div class="input-group-btn">
+                            <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                            <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="screen_name"><span>頁面3</span><br></div>
+                    <div class="previewimg_wrap">
+                      <div class="pcbg_preview img_preview" style="background-image:url();"></div>
+                      <div class="pcfp_preview img_preview" style="background-image:url(upload/prod5.jpg);"></div>
+                    </div>
+                    <div class="imgpath_wrap">
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon"> 背景圖片:(建議尺寸1234*1234):</span>
+                        <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                        <div class="input-group-btn">
+                            <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                            <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                        </div>
+                      </div>
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon">前景圖片:(建議尺寸1234*1234):</span>
+                        <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                        <div class="input-group-btn">
+                            <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                            <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="screen_name"><span>頁尾區塊</span><br></div>
+                    <div class="previewimg_wrap">
+                      <div class="pcbg_preview img_preview" style="background-image:url(upload/footerbg.jpg);"></div>
+                      <div class="pcfp_preview img_preview" style="background-image:url(upload/footerimg.png);"></div>
+                    </div>
+                    <div class="imgpath_wrap">
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon"> 背景圖片:(建議尺寸1234*1234):</span>
+                        <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                        <div class="input-group-btn">
+                            <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                            <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                        </div>
+                      </div>
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon">前景圖片:(建議尺寸1234*1234):</span>
+                        <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                        <div class="input-group-btn">
+                            <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                            <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+
+
+
+                </ul>
+              </div><!--tab1 end -->
+              <div class="tab-pane" id="tab_mobile">
+                  <ul class="upload_list">
+                    <li>
+                      <div class="screen_name"><span>頁面1</span><br></div>
+                      <div class="previewimg_wrap">
+                        <div class="mbg_preview img_preview" style="background-image:url();"></div>
+                        <div class="mfp_preview img_preview" style="background-image:url(upload/main2_phone.jpg);"></div>
+                      </div>
+                      <div class="imgpath_wrap">
+                        <div class="input-group input-group-sm">
+                    			<span class="input-group-addon"> 背景圖片:(建議尺寸1234*1234):</span>
+                    			<input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                    			<div class="input-group-btn">
+                    					<a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                    					<a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                    			</div>
+                    		</div>
+                        <div class="input-group input-group-sm">
+                          <span class="input-group-addon">前景圖片:(建議尺寸1234*1234):</span>
+                          <input type="text" class="form-control imgpath" placeholder="點此選擇圖片">
+                          <div class="input-group-btn">
+                              <a href="#" class="btn btn-primary choosefile"><span class="glyphicon glyphicon-folder-open"></span> 瀏覽檔案</a>
+                              <a href="javascript:void(0)" class="btn btn-warning clearfile"><span class="glyphicon glyphicon-remove"></span> 清除</a>
+                          </div>
+                        </div>
+                      </div>
+
+                    </li>
+                  </ul>
+              </div><!--tab2 end -->
+            </div><!--tab content end -->
+
+          </div><!--modal-body end -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default pull-right" data-dismiss="modal">關閉</button>
+            <button type="button" class="btn btn-success pull-left">儲存變更</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+
+
+    <h1 style="display:none;">【產品名稱】</h1>
+    <div class="loading"><img src="images/loading.gif">
+        <br>載入中...</div>
+
+
+    <script src="js/textscroll.js"></script>
+    <a href="javascript:void(0);" class="menutoggle"><img src="images/menutoggle.png" alt="選單">選單</a>
+    <a href="javascript:void(0);" class="menuclose">X<br>返回</a>
+
+    <header>
+        <div class="topmenu" style="background-image:url(upload/topmenu.jpg)">
+            <h1 class="toplogo"><a href="index.aspx">
+            <img src="images/logo.png"></a></h1>
+            <div class="topnav">
+                <ul>
+                    <li>
+                        <a id="OrderQuery" href="javascript:void(0);"><img src="upload/orderlist_icon.png" alt="訂單查詢">訂單查詢</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);"><img src="upload/service_icon.png" alt="客服中心">客服中心</a>
+                    </li>
+                    <li>
+                        <a id="login" href="javascript:void(0);" alt="登入/註冊"><img src="upload/login_icon.png">登入/註冊</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="gocheckout" alt="購物車"><img src="upload/cart_icon.png">購物車<span id="carQty">0</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="marquee">
+        <div class="newstext">
+            <span><a href ='#'>產品名稱‬--好喝耶</a></span><span><a href ='#'>產品名稱~在華山藝術園區!!</a></span><span><a href ='#'>限時優惠中! </a></span>
+        </div>
+        <a href="#" class="morenews">more news</a>
+    </div>
+
+
+
+    <!--[if lte IE 8]><div class="main oldie"> <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <div class="main">
+        <!--<![endif]-->
+
+        <section class="page1">
+            <div class="page_container" style="background-image: url(upload/main1bg.jpg)">
+                <img src="upload/main1.jpg" class="visible-pc">
+                <img src="upload/main1_phone.jpg" class="visible-m">
+            </div>
+        </section>
+
+        <section class="page2">
+            <div class="page_container" style="background-image: url(upload/main2bg.jpg)">
+                <img src="upload/main2.jpg" class="visible-pc">
+                <img src="upload/main2_phone.jpg" class="visible-m">
+            </div>
+        </section>
+
+        <section class='proditem prod4'><a href='javascript:void(0)' style='display:none' class='pdclose'>✖<br>返回</a>
+            <div class='page_container' style="background-color:#F9EFB9;background-image: url(upload/pdbg_01.jpg);;">
+                <div class='pdoverlay' style='display:none'></div>
+                <img src='images/left_logo.png' alt='產品名稱' class='left_logo'>
+                <img data-original='upload/prod1.png' src='images/biglogo.gif' alt='產品1' class='pdimg lazy'>
+                <div class='prodtext'>數量 :
+                    <select class='ProdNum'>
+                        <option value='1'>1手</option>
+                        <option value='2'>2手</option>
+                        <option value='3'>3手</option>
+                        <option value='4'>1箱</option>
+                        <option value='8'>2箱</option>
+                        <option value='12'>3箱</option>
+                        <option value='16'>4箱</option>
+                        <option value='20'>5箱</option>
+                        <option value='24'>6箱</option>
+                        <option value='28'>7箱</option>
+                        <option value='32'>8箱</option>
+                        <option value='36'>9箱</option>
+                        <option value='40'>10箱</option>
+                    </select>
+                    <div class='price_o'>定價: <span>1200 <I>一手(6入)</I></span></div>
+                    <div class='price'>嚐鮮價: <span>999 <I>一手(6入)</I></span></div><a href='javascript:void(0);' class='addcart' data-spec='8'>加到購物車</a></div>
+            </div>
+        </section>
+        <section class='proditem prod5'><a href='javascript:void(0)' style='display:none' class='pdclose'>✖<br>返回</a>
+            <div class='page_container' style="background-color:#FCDCD6;background-image: url(upload/pdbg_02.jpg);">
+                <div class='pdoverlay' style='display:none'></div>
+                <img src='images/left_logo.png' alt='產品名稱' class='left_logo'>
+                <img data-original='upload/prod2.png' src='images/biglogo.gif' alt='產品2' class='pdimg lazy'>
+                <div class='prodtext'>數量 :
+                    <select class='ProdNum'>
+                        <option value='1'>1手</option>
+                        <option value='2'>2手</option>
+                        <option value='3'>3手</option>
+                        <option value='4'>1箱</option>
+                        <option value='8'>2箱</option>
+                        <option value='12'>3箱</option>
+                        <option value='16'>4箱</option>
+                        <option value='20'>5箱</option>
+                        <option value='24'>6箱</option>
+                        <option value='28'>7箱</option>
+                        <option value='32'>8箱</option>
+                        <option value='36'>9箱</option>
+                        <option value='40'>10箱</option>
+                    </select>
+                    <div class='price_o'>定價: <span>1200 <I>一手(6入)</I></span></div>
+                    <div class='price'>嚐鮮價: <span>999 <I>一手(6入)</I></span></div><a href='javascript:void(0);' class='addcart' data-spec='7'>加到購物車</a></div>
+            </div>
+        </section>
+        <section class='proditem prod201510'><a href='javascript:void(0)' style='display:none' class='pdclose'>✖<br>返回</a>
+            <div class='page_container' style="background-color:#fff;background-image: url();">
+                <div class='pdoverlay' style='display:none'></div><img src='images/left_logo.png' alt='產品名稱' class='left_logo'>
+                <img data-original='upload/pdimg_box.jpg' src='images/biglogo.gif' alt='組合價' class='pdimg lazy'>
+                <div class='prodtext'>數量 :
+                    <select class='ProdNum'>
+                        <option value='1'>1手</option>
+                        <option value='2'>2手</option>
+                        <option value='3'>3手</option>
+                        <option value='4'>1箱</option>
+                        <option value='8'>2箱</option>
+                        <option value='12'>3箱</option>
+                        <option value='16'>4箱</option>
+                        <option value='20'>5箱</option>
+                        <option value='24'>6箱</option>
+                        <option value='28'>7箱</option>
+                        <option value='32'>8箱</option>
+                        <option value='36'>9箱</option>
+                        <option value='40'>10箱</option>
+                    </select>
+                    <div class='price_o'>定價: <span>4560 <I>一手(6入)</I></span></div>
+                    <div class='price'>嚐鮮價: <span>3420 <I>一手(6入)</I></span></div><a href='javascript:void(0);' class='addcart' data-spec='5'>加到購物車</a></div>
+            </div>
+        </section>
+        <section class='proditem prod3'><a href='javascript:void(0)' style='display:none' class='pdclose'>✖<br>返回</a>
+            <div class='page_container' style="background-color:#F9EFB9;background-image: url(upload/pdbg_01.jpg);;">
+                <div class='pdoverlay' style='display:none'></div><img src='images/left_logo.png' alt='產品名稱' class='left_logo'>
+                <img data-original='upload/prod3.png' src='images/biglogo.gif' alt='產品3' class='pdimg lazy'>
+                <div class='prodtext'>數量 :
+                    <select class='ProdNum'>
+                        <option value='1'>1手</option>
+                        <option value='2'>2手</option>
+                        <option value='3'>3手</option>
+                        <option value='4'>1箱</option>
+                        <option value='8'>2箱</option>
+                        <option value='12'>3箱</option>
+                        <option value='16'>4箱</option>
+                        <option value='20'>5箱</option>
+                        <option value='24'>6箱</option>
+                        <option value='28'>7箱</option>
+                        <option value='32'>8箱</option>
+                        <option value='36'>9箱</option>
+                        <option value='40'>10箱</option>
+                    </select>
+                    <div class='price_o'>定價: <span>1200 <I>一手(6入)</I></span></div>
+                    <div class='price'>嚐鮮價: <span>999 <I>一手(6入)</I></span></div><a href='javascript:void(0);' class='addcart' data-spec='4'>加到購物車</a></div>
+            </div>
+        </section>
+        <section class='proditem prod1'><a href='javascript:void(0)' style='display:none' class='pdclose'>✖<br>返回</a>
+            <div class='page_container' style="background-color:#FCDCD6;background-image: url(upload/pdbg_02.jpg);">
+                <div class='pdoverlay' style='display:none'></div><img src='images/left_logo.png' alt='產品名稱' class='left_logo'>
+                <img data-original='upload/prod4.png' src='images/biglogo.gif' alt='產品4' class='pdimg lazy'>
+                <div class='prodtext'>數量 :
+                    <select class='ProdNum'>
+                        <option value='1'>1手</option>
+                        <option value='2'>2手</option>
+                        <option value='3'>3手</option>
+                        <option value='4'>1箱</option>
+                        <option value='8'>2箱</option>
+                        <option value='12'>3箱</option>
+                        <option value='16'>4箱</option>
+                        <option value='20'>5箱</option>
+                        <option value='24'>6箱</option>
+                        <option value='28'>7箱</option>
+                        <option value='32'>8箱</option>
+                        <option value='36'>9箱</option>
+                        <option value='40'>10箱</option>
+                    </select>
+                    <div class='price_o'>定價: <span>1200 <I>一手(6入)</I></span></div>
+                    <div class='price'>嚐鮮價: <span>999 <I>一手(6入)</I></span></div><a href='javascript:void(0);' class='addcart' data-spec='3'>加到購物車</a></div>
+            </div>
+        </section>
+        <section class='proditem prod2'><a href='javascript:void(0)' style='display:none' class='pdclose'>✖<br>返回</a>
+            <div class='page_container' style="background-color:#FCDCD6;background-image: url(upload/pdbg_02.jpg);">
+                <div class='pdoverlay' style='display:none'></div><img src='images/left_logo.png' alt='產品名稱' class='left_logo'>
+                <img data-original='upload/prod5.png' src='images/biglogo.gif' alt='產品1' class='pdimg lazy'>
+                <div class='prodtext'>數量 :
+                    <select class='ProdNum'>
+                        <option value='1'>1手</option>
+                        <option value='2'>2手</option>
+                        <option value='3'>3手</option>
+                        <option value='4'>1箱</option>
+                        <option value='8'>2箱</option>
+                        <option value='12'>3箱</option>
+                        <option value='16'>4箱</option>
+                        <option value='20'>5箱</option>
+                        <option value='24'>6箱</option>
+                        <option value='28'>7箱</option>
+                        <option value='32'>8箱</option>
+                        <option value='36'>9箱</option>
+                        <option value='40'>10箱</option>
+                    </select>
+                    <div class='price_o'>定價: <span>1200 <I>一手(6入)</I></span></div>
+                    <div class='price'>嚐鮮價: <span>999 <I>一手(6入)</I></span></div><a href='javascript:void(0);' class='addcart' data-spec='2'>加到購物車</a></div>
+            </div>
+        </section>
+
+
+        <section class="page3">
+            <div class="page_container" style="background:#fff;background-image: url()">
+                <img src="upload/main3.jpg" class="visible-pc">
+                <img src="upload/main3_phone.jpg" class="visible-m">
+            </div>
+        </section>
+
+        <section class="footer">
+            <div class="page_container" style="background-image: url(upload/footerbg.jpg)">
+                <img src="images/left_logo.png" alt="產品名稱" class="left_logo">
+                <img data-original="upload/footerimg.png" src="images/fbload.png" alt="產品名稱" class="footerimg visible-pc lazy">
+                <img data-original="upload/footerimg_phone.png" src="images/fbload.png" alt="產品名稱" class="footerimg visible-m lazy">
+                <a href="https://www.facebook.com/#" target="_blank" class="fanpagebox">
+                    <img src="upload/fbbox.jpg" alt="產品名稱官方粉絲團">
+                    <!-- <img src="d/fbbox_m.png" alt="產品名稱官方粉絲團" class="visible-m"> -->
+                </a>
+                <div class="fcontact">
+                    <img src="upload/qrcode.gif" class="qrcode">
+                    <p class="contactinfo">服務專線:0800-000-000
+                        <br> 傳真:(02)1234-5678
+                        <br> E-mail:12345678@gmail.com
+                        <br> 公司地址:
+                    </p>
+                    <span class="copyright">© Copyright © 2015 版權所有 禁止轉載</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <a href="#" class="scrollup">Scroll</a>
+    <!-- main -->
+
+
+
+
+    <script src="js/control.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/sweet-alert.min.js"></script>
+    <script src="js/spectrum.js"></script>
+    <!--[if lte IE 8]>
+    <script type="text/javascript">
+        var ie = 8;
+    </script>
+    <![endif]-->
+
+    <script type="text/javascript">
+        function LowerThanAndroidVersion(testversion) {
+            var useragent = navigator.userAgent;
+            var androidpoint = useragent.indexOf('Android');
+            if (androidpoint >= 0) {
+                var rest = useragent.substring(androidpoint + 8, useragent.length);
+                var version = rest.substring(0, rest.indexOf(';'));
+                return (version < testversion) ? true : false;
+            }
+        }
+
+        $(window).load(function() {
+            $('.loading').fadeOut();
+        });
+
+        $(".lazy").lazyload();
+
+        function onepagecroll() {
+            $(".main").onepage_scroll({
+                sectionContainer: "section",
+                loop: true,
+
+                afterMove: function(index) {
+                    $(".lazy").lazyload();
+                    $('.topmenu , .marquee').fadeOut();
+                    $('.menutoggle').fadeIn();
+                    $('.menuclose').hide();
+                    var nowpage = $('body').attr('class');
+                    //ga('send', 'event', 'pcindex', 'scroll', nowpage);
+                },
+                beforeMove: function(index) {
+                    $('.menuclose').hide();
+                }
+
+
+            });
+        }
+
+        function colopicker(){
+          $(".bgcolor").spectrum({
+              color: "#F4BD43",
+              showAlpha: false,
+              preferredFormat: "Hex",
+              allowEmpty:true,
+              chooseText: "選好了",
+              cancelText: "取消",
+              change: function(color) {
+                //$(this).parent().parent().css('background',$(this).val());
+              }
+          });
+        };
+
+
+
+        $(function() {
+            // $('.proditem').sakura();
+            $(".lazy").lazyload();
+            colopicker();
+
+            function colopicker(){
+              $(".marqueecolor").spectrum({
+                  color: "#555",
+                  showAlpha: false,
+                  preferredFormat: "Hex",
+                  allowEmpty:true,
+                  chooseText: "選好了",
+                  cancelText: "取消",
+                  change: function(color) {
+                    //$(this).parent().parent().css('background',$(this).val());
+                  }
+              });
+            };
+
+            // for demo，假裝有檔案路徑
+            $('.imgpath_wrap').each(function(){
+              if ($(this).prev().find('.img_preview').size()==1) {
+                var thisbg = $(this).prev().find('.img_preview').css('background-image').replace('url(','').replace(')','');
+                $(this).find('.imgpath').eq(0).val(thisbg);
+              }
+              if ($(this).prev().find('.img_preview').size()==1) {
+                var thisimg = $(this).prev().find('.img_preview').css('background-image').replace('url(','').replace(')','');
+                if ($(this).find('.imgpath')==2) $(this).find('.imgpath').eq(1).val(thisimg);
+                else $(this).find('.imgpath').val(thisimg);
+              }
+            })
+
+            if (/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('html, body').css({
+                    "overflow": "auto"
+                });
+                $(".topmenu,.menuclose").hide();
+                $(".menutoggle").show();
+                var versiontest = LowerThanAndroidVersion('4.3');
+                if (versiontest) {
+                    //  < android 4.2
+                    moveani();
+                    $('html, body').addClass('a42body');
+                    $('.main').addClass('a42main');
+                    $('section, .page_container').addClass('a42section');
+                    if (navigator.userAgent.indexOf('Chrome') > -1) {} else $('body').append("<div class='alert'>請使用 Chrome 瀏覽器已獲得更佳的瀏覽體驗</div>");
+                } else {
+                    $(".lazy").lazyload({
+                        threshold: 0
+                    });
+                    $('body, html').css({
+                        height: 'auto',
+                        overflow: 'auto',
+                        position: 'relative'
+                    });
+                    $('.topmenu , .marquee').hide();
+                    $('.menutoggle').show();
+                    $('.menuclose').hide();
+                }
+            } else {
+                if ($(".main").hasClass("oldie")) {
+                    $('body, html').css({
+                        overflow: 'auto',
+                        position: 'relative'
+                    });
+                    $(".lazy").each(function() {
+                        $(this).attr('src', $(this).data('original'));
+                    });
+                    $('..onepage-pagination').hide();
+                } else {
+                    onepagecroll();
+                }
+            }
+
+
+
+            // theme setting
+            $( ".sort" ).sortable();
+            $( ".sort" ).disableSelection();
+            $('.btn_addpd').click(function(){
+              var html = "<li><div class='img_wrap'></div><select><option>產品7</option><option>產品8</option></select></li>"
+              $('.sort').prepend(html);
+            })
+            // switch http://codepen.io/DC/pen/JqrIH
+        		$('.Switch').click(function() {
+                    if ($(this).hasClass('On')){
+                        $(this).parent().find('input:checkbox').attr('checked', true);
+                        $(this).removeClass('On').addClass('Off');
+                    } else {
+                        $(this).parent().find('input:checkbox').attr('checked', false);
+                        $(this).removeClass('Off').addClass('On');
+                    }
+            });
+            $('.Switch').each(function() {
+                    if ($(this).parent().find('input:checkbox').length){
+                          if (!$(this).parent().find('input:checkbox').hasClass("show")){
+                              $(this).parent().find('input:checkbox').hide(); }
+                          if ($(this).parent().find('input:checkbox').is(':checked')){
+                              $(this).removeClass('On').addClass('Off');
+                          } else {
+                              $(this).removeClass('Off').addClass('On');
+                          }
+                      }
+            });
+
+
+
+        });
+    </script>
+    <!--[if lte IE 7 ]>
+        <div style="background-color: #FFEA56; margin: 5px 0; padding: 3px 10px; text-align: center">
+            <p><strong>您好</strong>，您目前使用的網頁瀏覽器版本太舊囉，我們建議您使用更快、更好用的瀏覽器！ 如：<a target="_blank" href="http://www.google.com/intl/zh-TW/chrome/browser/">Google瀏覽器</a>、<a target="_blank" href="https://mozilla.com.tw/firefox/">Firefox</a></p>
+        </div>
+<![endif]-->
+
+
+
+</body>
+
+</html>

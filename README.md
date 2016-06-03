@@ -1,2 +1,7 @@
-# onepagescroll_theme
-one page scroll 效果單頁購物網站 + 首頁佈景與圖片更換 prototype
+單頁形象購物網站，使用 onepage scroll 效果 + 首頁佈景與圖片更換 prototype。
+
+用途: 平面設計師可直接上稿更新，而不必額外編排 CSS 或 HTML。
+
+* 避免因資訊太多超出每一屏的畫面外，或是視覺設計師不易編排維護，每一頁面使用圖片。
+* onepage scroll 效果讓行動裝置使用者誤以為網頁捲動不順，改為單純下拉。
+* 使用後端程式替換 page_container 中的背景圖路徑。

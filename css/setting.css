@@ -1,0 +1,133 @@
+.topnav{top:-60%}
+.toolbar{
+  background: rgba(0,0,0,.5);width:100%;padding:10px;
+  position:absolute;bottom:0;z-index: 99
+}
+.toolbar a{color:#fff;margin:0 0 0 20px;display: inline-block}
+.sort{list-style: none;padding: 0;margin:0}
+.sort>li{border-bottom:1px solid #ccc;padding-bottom: 10px;cursor: s-resize;background: rgba(255,255,255,.5);padding-top: 10px;overflow: hidden;}
+.sort>li:hover{box-shadow:0 5px 10px rgba(0,0,0,.2) }
+.ui-sortable-helper{box-shadow:0 5px 10px rgba(0,0,0,.5)}
+.page_select_wrap{float: left;width:300px}
+.page_select_wrap .input-group-addon{background:none;color:#fff}
+.page_select_wrap option[disabled], .setting_select optgroup[disabled]{color:#ccc}
+.blocktitle{margin-left: 30px;color:#fff}
+
+.img_wrap{width:60px;display:inline-block}
+.img_preview{max-width:50px}
+.screen_name{}
+.switch_wrap{display: inline-block;float: right;margin-top:0px;margin-right: 10px}
+
+.tab-content>.active {
+    border: 1px solid #ccc;
+    border-top: 0;
+    padding: 0;
+  }
+
+.upload_list, .nav_upload_list, .topmenu_list{list-style: none;padding: 0;margin:0}
+.upload_list>li, .nav_upload_list>li, .topmenu_list>li{padding: 5px;border-bottom:1px solid #eee;overflow: hidden;}
+.upload_list>li:hover, .nav_upload_list>li:hover,  .topmenu_list>lii:hover{background:#eee}
+.upload_list>li>.screen_name{float: left;padding-top: 5px;width: 80px;}
+.upload_list>li>.screen_name>span{font-size:18px}
+
+.topmenu_list>li>.nav_name{float: left;padding-top: 5px;width: 220px;}
+.img_preview{
+  background-repeat: no-repeat;background-size: 100% auto;    position: absolute;
+  width: 80px;
+  height: 45px;
+  float: left;
+  margin: 5px;
+}
+
+.previewimg_wrap{width:90px;float:left;min-height: 50px;}
+.pcbg_preview, .pcfp_preview{width:80px;height:45px;float: left;margin:5px}
+.pcbg_preview{background-repeat: repeat-x;}
+.pcfp_preview{}
+
+.mbg_preview, .mfp_preview{width:50px;height:30px;float: left;margin:5px}
+.mbg_preview{background-repeat: repeat-x;}
+.mfp_preview{}
+.mbg_preview, .mfp_preview{width:45px;height:60px;float: left;margin:5px}
+
+.imgpath_wrap>.input-group{margin-bottom: 5px}
+.imgpath_wrap>.input-group>.input-group-addon{border:0;background: none}
+.previewimg_wrap{position: relative}
+
+.bgcolor{width: 200px;float:left;display: block !important}
+.Switch {
+    position: relative;
+    display: inline-block;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #ccc;
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.8);
+    height: 30px;
+    padding: 3px 6px 5px 6px;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    background: #000;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1), inset 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    float: left;
+}
+.Switch span {
+    display: inline-block;
+    width: 55px;
+    text-align: center;
+}
+.Switch.Off{background: #73C990}
+.Switch.On{background: #E06252}
+.Switch span.On, .Switch span.Off {color: #fff;}
+.Switch .Toggle {
+    position: absolute;
+    top: 1px;
+    width: 57px;
+    height: 25px;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    background: #fff;
+    background: -moz-linear-gradient(top, #ececec 0%, #ffffff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ececec), color-stop(100%, #ffffff));
+    background: -webkit-linear-gradient(top, #ececec 0%, #ffffff 100%);
+    background: -o-linear-gradient(top, #ececec 0%, #ffffff 100%);
+    background: -ms-linear-gradient(top, #ececec 0%, #ffffff 100%);
+    background: linear-gradient(top, #ececec 0%, #ffffff 100%);
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
+    z-index: 999;
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+    -ms-transition: all 0.15s ease-in-out;
+}
+.Switch.On .Toggle {
+    left: 2%;
+}
+.Switch.Off .Toggle {
+    left: 54%;
+}
+
+
+/* Round Switch */
+
+.Switch.Round {
+    padding: 0px 20px;
+    border-radius: 40px;
+}
+body.IE7 .Switch.Round {
+    width: 1px;
+}
+.Switch.Round .Toggle {
+    border-radius: 40px;
+    width: 14px;
+    height: 14px;
+}
+.Switch.Round.Off .Toggle {
+    left: 3%;
+    background: #33d2da;
+}
+.Switch.Round.On .Toggle {
+    left: 58%;
+}
